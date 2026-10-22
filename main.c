@@ -1,22 +1,44 @@
 #include <stdio.h>
+#include <ctype.h>
+#include <string.h>
 #include "lib/stu_add.h"
 #include "lib/stu_info.h"
+#include "lib/find_roll.h"
+#include "lib/find_name.h"
+#include "lib/find_reg.h"
+#include "lib/input_codes.h"
 
 struct StudentInfo st[55];
 
 int main() {
     int num = 0;
+    const char *input_codes[] = {"exit", "stuadd", "findroll", "findname", "findreg"};
+    char usr_input[50];
 
-    add_student(&num);
-    printf("First name: %s\n", st[0].fname);
-    printf("Last name: %s\n", st[0].lname);
-    printf("Roll: %d\n", st[0].roll);
-    printf("CGPA: %f\n", st[0].cgpa);
+    while (true) {
+        printf("What would you like to do? ('exit' to exit): ");
+        
+        if (scanf("%49s", usr_input) != 1) {
+            break;
+        }
 
-    int total_cids = sizeof(st[0].cid) / sizeof(st[0].cid[0]);
+        printf("\n");
 
-    for (int i = 0; i < total_cids; i++) {
-        printf("CID %d: %d\n", i + 1, st[0].cid[i]);
+        if (!strcasecmp(usr_input, input_codes[EXIT])) {
+            break;
+        } else if (!strcasecmp(usr_input, input_codes[STUADD])) {
+            add_student(&num);
+            printf("\n");
+        } else if (!strcasecmp(usr_input, input_codes[FINDROLL])) {
+            find_roll(num);
+            printf("\n");
+        } else if (!strcasecmp(usr_input, input_codes[FINDNAME])) {
+            find_firstname(num);
+            printf("\n");
+        } else if (!strcasecmp(usr_input, input_codes[FINDREGISTERED])) {
+            find_reg(num);
+            printf("\n");
+        }
     }
 
     return 0;
