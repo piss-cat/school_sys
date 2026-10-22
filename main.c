@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
+#include <stdbool.h>
 #include "lib/stu_add.h"
 #include "lib/stu_info.h"
 #include "lib/find_roll.h"
