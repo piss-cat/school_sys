@@ -10,6 +10,8 @@ void find_roll(int num) {
     printf("Enter the roll number of the student: ");
     scanf("%d", &roll);
 
+    printf("\n");
+
     for (int i = 0; i < num; i++) {
         if (roll == st[i].roll) {
             printf("Student Details:\n");

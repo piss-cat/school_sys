@@ -5,13 +5,14 @@
 #include "lib/stu_info.h"
 #include "lib/find_roll.h"
 #include "lib/find_name.h"
+#include "lib/find_reg.h"
 #include "lib/input_codes.h"
 
 struct StudentInfo st[55];
 
 int main() {
     int num = 0;
-    const char *input_codes[] = {"exit", "stuadd", "findroll", "findname"};
+    const char *input_codes[] = {"exit", "stuadd", "findroll", "findname", "findreg"};
     char usr_input[50];
 
     while (true) {
@@ -34,7 +35,10 @@ int main() {
         } else if (!strcasecmp(usr_input, input_codes[FINDNAME])) {
             find_firstname(num);
             printf("\n");
-        } 
+        } else if (!strcasecmp(usr_input, input_codes[FINDREGISTERED])) {
+            find_reg(num);
+            printf("\n");
+        }
     }
 
     return 0;

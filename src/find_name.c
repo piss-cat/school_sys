@@ -13,6 +13,8 @@ void find_firstname(int num) {
         return;
     }
 
+    printf("\n");
+    
     for (int i = 0; i < num; i++) {
         if (!strcasecmp(st[i].fname, fname)) {
             printf("Student Details:\n");

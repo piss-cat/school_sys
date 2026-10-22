@@ -5,7 +5,8 @@ enum InputCodes {
     EXIT,
     STUADD,
     FINDROLL,
-    FINDNAME
+    FINDNAME,
+    FINDREGISTERED
 };
 
 #endif
