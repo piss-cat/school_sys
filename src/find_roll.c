@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdbool.h>
-#include "../lib/find_rl.h"
+#include "../lib/find_roll.h"
 #include "../lib/stu_info.h"
 
 void find_roll(int num) {

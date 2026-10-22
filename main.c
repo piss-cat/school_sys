@@ -3,7 +3,7 @@
 #include <string.h>
 #include "lib/stu_add.h"
 #include "lib/stu_info.h"
-#include "lib/find_rl.h"
+#include "lib/find_roll.h"
 #include "lib/input_codes.h"
 
 struct StudentInfo st[55];
