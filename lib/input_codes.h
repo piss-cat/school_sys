@@ -7,7 +7,8 @@ enum InputCodes {
     FINDROLL,
     FINDNAME,
     FINDREGISTERED,
-    STUTOTAL
+    STUTOTAL,
+    STUDEL
 };
 
 #endif
