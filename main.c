@@ -4,6 +4,7 @@
 #include <stdbool.h>
 #include "lib/stu_add.h"
 #include "lib/stu_info.h"
+#include "lib/stu_total.h"
 #include "lib/find_roll.h"
 #include "lib/find_name.h"
 #include "lib/find_reg.h"
@@ -13,7 +14,7 @@ struct StudentInfo st[55];
 
 int main() {
     int num = 0;
-    const char *input_codes[] = {"exit", "stuadd", "findroll", "findname", "findreg"};
+    const char *input_codes[] = {"exit", "stuadd", "findroll", "findname", "findreg", "stutotal"};
     char usr_input[50];
 
     while (true) {
@@ -38,6 +39,9 @@ int main() {
             printf("\n");
         } else if (!strcasecmp(usr_input, input_codes[FINDREGISTERED])) {
             find_reg(num);
+            printf("\n");
+        } else if (!strcasecmp(usr_input, input_codes[STUTOTAL])) {
+            total_students(num);
             printf("\n");
         }
     }
