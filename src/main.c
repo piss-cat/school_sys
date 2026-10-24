@@ -1,25 +1,21 @@
 #include <stdio.h>
-#include <ctype.h>
 #include <string.h>
 #include <stdbool.h>
-#include "stu_add.h"
-#include "stu_del.h"
+#include "commands.h"
+#include "help.h"
+#include "list.h"
 #include "stu_info.h"
-#include "stu_total.h"
-#include "find_roll.h"
-#include "find_name.h"
-#include "find_reg.h"
-#include "input_codes.h"
 
 struct StudentInfo st[55];
 
 int main() {
     int num = 0;
-    const char *input_codes[] = {"exit", "stuadd", "findroll", "findname", "findreg", "stutotal", "studel"};
     char usr_input[50];
 
+    printf("Welcome to the School System! Type 'help' if you need any extra assistance.\n");
+
     while (true) {
-        printf("What would you like to do? ('exit' to exit): ");
+        printf(">>> ");
         
         if (scanf("%49s", usr_input) != 1) {
             break;
@@ -27,27 +23,27 @@ int main() {
 
         printf("\n");
 
-        if (!strcasecmp(usr_input, input_codes[EXIT])) {
+        if (!strcasecmp(usr_input, "exit")) {
             break;
-        } else if (!strcasecmp(usr_input, input_codes[STUADD])) {
-            add_student(&num);
-            printf("\n");
-        } else if (!strcasecmp(usr_input, input_codes[FINDROLL])) {
-            find_roll(num);
-            printf("\n");
-        } else if (!strcasecmp(usr_input, input_codes[FINDNAME])) {
-            find_firstname(num);
-            printf("\n");
-        } else if (!strcasecmp(usr_input, input_codes[FINDREGISTERED])) {
-            find_reg(num);
-            printf("\n");
-        } else if (!strcasecmp(usr_input, input_codes[STUTOTAL])) {
-            total_students(num);
-            printf("\n");
-        } else if (!strcasecmp(usr_input, input_codes[STUDEL])) {
-            delete_student(&num);
-            printf("\n");
         }
+
+        if (!strcasecmp(usr_input, "help")) {
+            help_command();
+            printf("\n");
+            continue;
+        }
+
+        if (!strcasecmp(usr_input, "list")) {
+            list_command();
+            printf("\n");
+            continue;
+        }
+
+        if (!exec_command(usr_input, &num)) {
+            printf("Unknown command. Try again.\n");
+        }
+
+        printf("\n");
     }
 
     return 0;

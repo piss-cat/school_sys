@@ -4,7 +4,7 @@
 #include "find_name.h"
 #include "stu_info.h"
 
-void find_firstname(int num) {
+void find_firstname(int *num) {
     char fname[50];
     bool found = false;
 
@@ -15,7 +15,7 @@ void find_firstname(int num) {
 
     printf("\n");
     
-    for (int i = 0; i < num; i++) {
+    for (int i = 0; i < *num; i++) {
         if (!strcasecmp(st[i].fname, fname)) {
             printf("Student Details:\n");
             printf("First name: %s\n", st[i].fname);
