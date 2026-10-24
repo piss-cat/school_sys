@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdbool.h>
-#include "../lib/find_roll.h"
-#include "../lib/stu_info.h"
+#include "find_roll.h"
+#include "stu_info.h"
 
-void find_roll(int num) {
+void find_roll(int *num) {
     int roll;
     bool found = false;
 
@@ -12,7 +12,7 @@ void find_roll(int num) {
 
     printf("\n");
 
-    for (int i = 0; i < num; i++) {
+    for (int i = 0; i < *num; i++) {
         if (roll == st[i].roll) {
             printf("Student Details:\n");
             printf("First name: %s\n", st[i].fname);

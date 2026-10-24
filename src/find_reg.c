@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdbool.h>
-#include "../lib/find_reg.h"
-#include "../lib/stu_info.h"
+#include "find_reg.h"
+#include "stu_info.h"
 
-void find_reg(int num) {
+void find_reg(int *num) {
     int cid;
     bool found = false;
 
@@ -12,7 +12,7 @@ void find_reg(int num) {
 
     printf("\n");
 
-    for (int i = 0; i < num; i++) {
+    for (int i = 0; i < *num; i++) {
         int total_cids = sizeof(st[i].cid) / sizeof(st[i].cid[0]);
         for (int j = 0; j < total_cids; j++) {
             if (cid == st[i].cid[j]) {
