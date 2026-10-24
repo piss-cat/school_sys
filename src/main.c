@@ -2,14 +2,14 @@
 #include <ctype.h>
 #include <string.h>
 #include <stdbool.h>
-#include "lib/stu_add.h"
-#include "lib/stu_del.h"
-#include "lib/stu_info.h"
-#include "lib/stu_total.h"
-#include "lib/find_roll.h"
-#include "lib/find_name.h"
-#include "lib/find_reg.h"
-#include "lib/input_codes.h"
+#include "stu_add.h"
+#include "stu_del.h"
+#include "stu_info.h"
+#include "stu_total.h"
+#include "find_roll.h"
+#include "find_name.h"
+#include "find_reg.h"
+#include "input_codes.h"
 
 struct StudentInfo st[55];
 

@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdbool.h>
-#include "../lib/find_reg.h"
-#include "../lib/stu_info.h"
+#include "find_reg.h"
+#include "stu_info.h"
 
 void find_reg(int num) {
     int cid;

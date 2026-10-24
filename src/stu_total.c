@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "../lib/stu_total.h"
+#include "stu_total.h"
 
 void total_students(int num) {
     printf("The total number of students is: %d.\n", num);

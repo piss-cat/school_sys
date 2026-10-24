@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdbool.h>
-#include "../lib/find_roll.h"
-#include "../lib/stu_info.h"
+#include "find_roll.h"
+#include "stu_info.h"
 
 void find_roll(int num) {
     int roll;

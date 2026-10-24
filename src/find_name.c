@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <string.h>
-#include "../lib/find_name.h"
-#include "../lib/stu_info.h"
+#include "find_name.h"
+#include "stu_info.h"
 
 void find_firstname(int num) {
     char fname[50];

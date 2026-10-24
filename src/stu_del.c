@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdbool.h>
-#include "../lib/stu_del.h"
-#include "../lib/stu_info.h"
+#include "stu_del.h"
+#include "stu_info.h"
 
 void delete_student(int *num) {
     int roll;

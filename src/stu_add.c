@@ -1,6 +1,6 @@
 #include <stdio.h>
-#include "../lib/stu_add.h"
-#include "../lib/stu_info.h"
+#include "stu_add.h"
+#include "stu_info.h"
 
 void add_student(int *num) {
     // Tell user what to expect
