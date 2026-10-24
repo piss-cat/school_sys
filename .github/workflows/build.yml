@@ -27,7 +27,12 @@ jobs:
     - name: Build for Windows
       if: matrix.os == 'windows-latest'
       run: |
-        clang src/*.c -Iinclude -Dstrcasecmp=_stricmp -Dstrncasecmp=_strnicmp -o school_manager.exe
+        # Create an empty strings.h file inside the include folder so Windows doesn't crash
+        New-Item -Path "include\strings.h" -ItemType File -Force
+        
+        # Compile with the macro replacements and silence the safe scanf warnings
+        clang src/*.c -Iinclude -Dstrcasecmp=_stricmp -Dstrncasecmp=_strnicmp -D_CRT_SECURE_NO_WARNINGS -o school_manager.exe
+
 
     - name: Upload Binary Artifact
       uses: actions/upload-artifact@v4
