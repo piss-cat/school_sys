@@ -30,8 +30,8 @@ jobs:
         # Create an empty strings.h file inside the include folder so Windows doesn't crash
         New-Item -Path "include\strings.h" -ItemType File -Force
         
-        # Compile with the macro replacements and silence the safe scanf warnings
-        clang src/*.c -Iinclude -Dstrcasecmp=_stricmp -Dstrncasecmp=_strnicmp -D_CRT_SECURE_NO_WARNINGS -o school_manager.exe
+        # Compile by forcing the insertion of the standard string.h header globally
+        clang src/*.c -Iinclude -include string.h -Dstrcasecmp=_stricmp -Dstrncasecmp=_strnicmp -D_CRT_SECURE_NO_WARNINGS -o school_manager.exe
 
 
     - name: Upload Binary Artifact
