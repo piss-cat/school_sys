@@ -1,4 +1,4 @@
-#include <string.h>
+#include <strings.h>
 #include <stdio.h>
 #include <stdbool.h>
 
@@ -7,17 +7,19 @@
 #include "stu_del.h"
 #include "stu_info.h"
 #include "stu_total.h"
+#include "stu_update.h"
 #include "find_roll.h"
 #include "find_name.h"
 #include "find_reg.h"
 
 static struct Command cmd_table[] = {
-    {"stuadd",   add_student},
-    {"findroll", find_roll},
-    {"findname", find_firstname},
-    {"findreg",  find_reg},
-    {"stutotal", total_students},
-    {"studel",   delete_student},
+    {"stuadd",    add_student},
+    {"findroll",  find_roll},
+    {"findname",  find_firstname},
+    {"findreg",   find_reg},
+    {"stutotal",  total_students},
+    {"studel",    delete_student},
+    {"stuupdate", update_student},
 };
 
 bool exec_command(const char *usr_input, int *num) {

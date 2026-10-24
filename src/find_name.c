@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdbool.h>
-#include <string.h>
+#include <strings.h>
 #include "find_name.h"
 #include "stu_info.h"
 

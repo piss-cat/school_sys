@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <string.h>
+#include <strings.h>
 #include <stdbool.h>
 #include "commands.h"
 #include "help.h"
